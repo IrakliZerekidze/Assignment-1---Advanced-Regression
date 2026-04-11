@@ -106,3 +106,24 @@ We replaced the logical Zero Imputation strategy with Forward Fill. This method 
 
 #### Insights:
 This experiment performed noticeably worse than Experiment 3 (Test R² dropped from 0.8301 to 0.8229, and Test MAE increased by about $800). This drop proves the hypothesis we discussed earlier: row order in a housing dataset is completely arbitrary. Because the houses are not sorted by a chronological timeline, taking a missing LotFrontage value from a random house in the row above it essentially injects random noise into the dataset. The model struggled to find patterns because we accidentally fed it fake, illogical data. This experiment conclusively rules out sequential imputation methods for this dataset.
+
+### Experiment 7: Backward Fill
+- **Features Used:** 37 Numerical Columns
+- **Preprocessing:** Backward Fill & Standard Scaling
+- **Model:** Linear Regression
+
+#### Process:
+We tested the reverse of our previous time-series method. Instead of copying the value from the row above, Backward Fill looks at a missing value and copies the value from the row immediately below it.
+
+#### Results:
+
+| Metric          | Training Set   | Test Set   |
+|:----------------|:---------------|:-----------|
+| R² Score        | 0.8071         | 0.8225     |
+| MAE             | $21,064.71     | $23,085.78 |
+| RMSE            | $33,917.64     | $36,902.19 |
+| RMSLE           | 0.3679         | 0.1962     |
+| Overfitting Gap | -0.0153        |            |
+
+#### Insights:
+The results are nearly identical to Forward Fill and still definitively worse than our simple Zero Imputation baseline (Test R² of 0.8301). Whether you copy from the row above or the row below, you are still assigning random house attributes to properties that don't share them. This officially closes the door on sequential imputation for this dataset.
