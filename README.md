@@ -88,9 +88,13 @@ Feature-ები დავტოვე მხოლოდ
 | Lasso Regression Feature Engineering | 0.9152 | 0.9147 | $14,098.55 | $15,706.80 | $25,772.54 | $26,517.53 | 0.1137 | 0.1262 | 0.0005 |
 
 ### Decision Tree
+! FE -> Feature Engineering
+! MD -> Max Depth
 | Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
 |------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
 | Baseline | 0.8402 | 0.7624 | 30877.19 | 42691.47 | 21913.60 | 28177.85 | 0.1722 | 0.2104 | 0.0778 |
+| FE MD = None| 1.0000 | 0.7767 | $0.00 | $25,474.71 | $0.00 | $41,382.80 | 0.0000 | 0.2019 | 0.2233 |
+| FE MD = 5| 0.8595 | 0.7952 | $19,990.24 | $25,644.94 | $28,945.60 | $39,631.25 | 0.1533 | 0.1970 | 0.0643 |
 
 ### Random Forest
 | Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
