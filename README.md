@@ -19,3 +19,30 @@ The results show that both linear and tree-based models can perform well on this
 Among tree-based approaches, XGBoost outperformed Random Forest and Decision Tree by effectively balancing bias and variance through boosting and regularization techniques.
 
 Overall, the best performance was achieved by combining appropriate preprocessing (such as log transformation) with well-tuned models, highlighting the importance of both data transformation and model selection.
+
+## მონაცემთა გაწმენდა და დამუშავება (Cleaning & Preprocessing)
+### 1. უსარგებლო სვეტების მოცილება
+- წავაშალე 'Id' სვეტი, რადგან არანაირ ინფორმაციას არ ატარებს და მხოლოდ იდენფიტიკატორია
+
+### 2. გამოტოვებული მნიშვნელობების (NA) მქონე სვეტების დადროპვ
+- სვეტებს რომლებსაც 80%-ზე მეტი NA მნიშვნელობა ჰქონდათ ამოვშალეთ
+- ასეთი სეტვები იყო: 'Alley', 'PoolQC', 'Fence', 'MiscFeature`. ასეთი სეტვები არასაკმარის ინფორმაციას იძლევიან
+  და მათი შევსება მეტ noise-ს იწვევს. ვცადე სხვა ზღვრებიც, უფრო გავზარდე 93, 97 % მდე რაც ამცირებდა წაშლილი
+  სვეტების რაოდენობას თუმცა შედეგი დიდად არ შეცვლილა, ოდნავ გაუარესდა კიდეც. ვცადე ზღვრის დაბლა დაწევაც,
+  60-50% მდე, ამან შედეგის გაუმჯობესება გამოწვია, თუმცა ჩავთვალე რომ 50% ზედმეტად აგრესიული და დაბალი იქნებოდა.
+  <img width="1115" height="465" alt="image" src="https://github.com/user-attachments/assets/73f9c0a0-6102-455d-9d9e-daf70d287de3" />
+
+
+### 3. NA მნიშვნელობების შევსების სტრატეგია
+#### რიცხვითი მნიშვნელობები
+- რიცხვითი მნიშვნელობის მქონე სეტვებში, გამოტოვებული ინფორმაცია მედიანებით შევავსე.
+#### კატეგორიული მნიშვნელობები
+- შევავსეთ მოდით. ვინაიდან ეს ტექსტური მონაცემია, ყველაზე ლოგიკურია, გამოტოვებული ადგილი შევავსოთ იმ მნიშვნელობით,
+  რომელიც ყველაზე ხშირად გვხვდება მონაცემთა ბაზაში..
+
+### 4. მაღალი დომინანტურობის სვეტების წაშლა
+- ზღვრად ავიღე 95%, ის სვეტები რომლებშიც რომელიმე მნიშვნელობა 95% მეტს იკავებდა წავშალე, რადგან სვეტი არაინფორმატიული
+  იქნებოდა, ვცადე სხვა მნიშვნელობებიც (90, 97, 99) თუმცა ოპტიმალური 95 აღმოჩნდა.
+  <img width="1109" height="469" alt="image" src="https://github.com/user-attachments/assets/98912a39-5bed-47af-81d6-3a4aef33ad1f" />
+
+
