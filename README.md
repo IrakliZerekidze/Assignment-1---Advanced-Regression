@@ -1,3 +1,43 @@
+# House Prices - Advanced Regression Techniques
+
+## კონკურსის და პროექტის მიმოხილვა
+კონკურსის მიზანია საცხოვრებელი სახლების ფასის პროგნოზირება სხვადასხვა მახასიათებლების საფუძველზე. 
+ამ პროექტში განხორციელდა მონაცემთა დამუშავება, მახასიათებლების ინჟინერია და რამდენიმე მოდელის ტრენინგი. 
+საბოლოოდ შეირჩა საუკეთესო მოდელი, რომელიც ყველაზე ზუსტ პროგნოზებს იძლევა.
+
+## რეპოზიტორიის სტრუქტურა
+
+```
+
+├── model-experiment.ipynb     ← EDA, preprocessing, ექსპერიმენტები
+├── model-inference.ipynb      ← საუკეთესო მოდელის ჩამოტვირთვა, პროგნოზი, submission
+└── README.md
+```
+
+| ფაილი | აღწერა |
+|---|---|
+| `model-experiment.ipynb` | მთავარი notebook EDA-სთვის და მოდელების ექსპერიმენტებისთვის |
+| `model-inference.ipynb` | MLflow-იდან მოდელის ჩატვირთვა, Kaggle-ის ტესტ სეტის ტრანსფორმაცია და submission გენერაცია |
+
+---
+
+## თანმიმდევრობა
+
+```
+Drop high-NaN columns
+    ↓
+Drop low-information columns
+    ↓
+Impute missing values
+    ↓
+Feature engineering
+    ↓
+One-Hot Encoding
+    ↓
+Feature selection
+    ↓
+Train model
+```
 ## მონაცემთა გაწმენდა და დამუშავება (Cleaning & Preprocessing)
 ### 1. უსარგებლო სვეტების მოცილება
 - წავაშალე 'Id' სვეტი, რადგან არანაირ ინფორმაციას არ ატარებს და მხოლოდ იდენფიტიკატორია
@@ -162,6 +202,9 @@ Feature Engineering-მა მცირე გაუმჯობესება 
 | Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
 |------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
 | Baseline | 0.9994 | 0.9231 | 1816.17 | 24283.06 | 1363.34 | 14797.80 | 0.0126 | 0.1309 | 0.0763 |
+
+<img width="1482" height="103" alt="image" src="https://github.com/user-attachments/assets/78636974-e593-4c42-b818-8de54ee3b932" />
+
 | Featuure Engineering | 0.9994 | 0.9243 | $1,368.27 | $14,534.06 | $1,853.17 | $24,088.89 | 0.0128 | 0.1295 | 0.0751 |
 | Feature Selection | 0.9994 | 0.9201 | $1,443.29 | $14,564.99 | $1,954.40 | $24,751.03 | 0.0135 | 0.1263 | 0.0792 |
 
