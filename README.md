@@ -81,8 +81,11 @@ Feature-ები დავტოვე მხოლოდ
 | Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
 |------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
 | Baseline | 0.8995 | 0.8640 | 24482.56 | 32293.27 | 15425.41 | 21043.45 | 0.1247 | 0.1677 | 0.0355 |
-| Baseline (log target) | 0.9080 | 0.9079 | 23424.36 | 26577.14 | 13768.38 | 17413.99 | 0.1100 | 0.1326 | 0.0001 |
+| Baseline (log target) | 0.9206 | 0.9058 | $13,768.38 | $17,413.99 | $23,424.36 | $26,577.14 | 0.1100 | 0.1326 | 0.0149 |
 | Lasso Regression Baseline | 0.9041 | 0.9081 | $14,835.74 | $16,364.30 | $28,340.52 | $25,966.95 | 0.1209 | 0.1309 | -0.0040 |
+| Feature Engineering | 0.9034 | 0.8691 | $15,297.88 | $20,912.44 | $24,007.22 | $31,692.67 | 0.1226 | 0.1721 | 0.0343 |
+| Feature Engineering (log target) | 0.9338 | 0.9072 | $12,905.31 | $16,994.14 | $21,574.78 | $28,021.89 | 0.1004 | 0.1316 | 0.0266 |
+| Lasso Regression Feature Engineering | 0.9152 | 0.9147 | $14,098.55 | $15,706.80 | $25,772.54 | $26,517.53 | 0.1137 | 0.1262 | 0.0005 |
 
 ### Decision Tree
 | Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
