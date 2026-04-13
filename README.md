@@ -1,25 +1,3 @@
-## 📊 Baseline Model Performance
-
-The table below summarizes the performance of various baseline models evaluated on the test set. Metrics include R², RMSE, MAE, RMSLE, and the overfitting gap (difference between train and test R²).
-
-| Model | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
-|------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
-| Linear Regression | 0.9401 | 0.4433 | 18903.42 | 65344.90 | 12109.42 | 21108.74 | 0.1023 | 0.7236 | 0.4968 |
-| Linear Regression (log target) | 0.9492 | 0.9328 | 17400.36 | 22701.53 | 11004.25 | 15063.08 | 0.0917 | 0.1308 | 0.0164 |
-| Ridge Regression | 0.9369 | 0.8958 | 19393.89 | 28265.25 | 12538.98 | 18201.72 | 0.1046 | 0.1653 | 0.0411 |
-| Lasso Regression | 0.9339 | 0.8990 | 19856.75 | 27829.36 | 12731.28 | 17067.50 | 0.1056 | 0.1488 | 0.0348 |
-| Decision Tree | 0.8402 | 0.7605 | 30877.19 | 42857.32 | 21913.60 | 28341.01 | 0.1722 | 0.2110 | 0.0796 |
-| Random Forest | 0.9696 | 0.8943 | 13475.76 | 28471.05 | 7247.05 | 17088.90 | 0.0697 | 0.1516 | 0.0752 |
-| XGBoost | 0.9861 | 0.9226 | 9098.03 | 24366.17 | 6755.96 | 15316.08 | 0.0605 | 0.1292 | 0.0635 |
-
-### ✅ Insights
-
-The results show that both linear and tree-based models can perform well on this dataset when properly configured. Linear Regression benefits greatly from a log transformation of the target variable, achieving the highest Test R² and lowest error among all models.
-
-Among tree-based approaches, XGBoost outperformed Random Forest and Decision Tree by effectively balancing bias and variance through boosting and regularization techniques.
-
-Overall, the best performance was achieved by combining appropriate preprocessing (such as log transformation) with well-tuned models, highlighting the importance of both data transformation and model selection.
-
 ## მონაცემთა გაწმენდა და დამუშავება (Cleaning & Preprocessing)
 ### 1. უსარგებლო სვეტების მოცილება
 - წავაშალე 'Id' სვეტი, რადგან არანაირ ინფორმაციას არ ატარებს და მხოლოდ იდენფიტიკატორია
@@ -30,6 +8,7 @@ Overall, the best performance was achieved by combining appropriate preprocessin
   და მათი შევსება მეტ noise-ს იწვევს. ვცადე სხვა ზღვრებიც, უფრო გავზარდე 93, 97 % მდე რაც ამცირებდა წაშლილი
   სვეტების რაოდენობას თუმცა შედეგი დიდად არ შეცვლილა, ოდნავ გაუარესდა კიდეც. ვცადე ზღვრის დაბლა დაწევაც,
   60-50% მდე, ამან შედეგის გაუმჯობესება გამოწვია, თუმცა ჩავთვალე რომ 50% ზედმეტად აგრესიული და დაბალი იქნებოდა.
+  
   <img width="1115" height="465" alt="image" src="https://github.com/user-attachments/assets/73f9c0a0-6102-455d-9d9e-daf70d287de3" />
 
 
@@ -62,4 +41,9 @@ Overall, the best performance was achieved by combining appropriate preprocessin
 ### Random Forest
 | Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
 |------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
+| Baseline | 0.9693 | 0.8940 | 13531.66 | 28513.83 | 7305.17 | 17244.57 | 0.0697 | 0.1512 | 0.0753 |
 
+### XGBoost
+| Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
+|------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
+| Baseline | 0.9994 | 0.9231 | 1816.17 | 24283.06 | 1363.34 | 14797.80 | 0.0126 | 0.1309 | 0.0763 |
