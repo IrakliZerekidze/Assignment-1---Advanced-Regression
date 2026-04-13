@@ -43,6 +43,23 @@ Overall, the best performance was achieved by combining appropriate preprocessin
 ### 4. მაღალი დომინანტურობის სვეტების წაშლა
 - ზღვრად ავიღე 95%, ის სვეტები რომლებშიც რომელიმე მნიშვნელობა 95% მეტს იკავებდა წავშალე, რადგან სვეტი არაინფორმატიული
   იქნებოდა, ვცადე სხვა მნიშვნელობებიც (90, 97, 99) თუმცა ოპტიმალური 95 აღმოჩნდა.
+  
   <img width="1109" height="469" alt="image" src="https://github.com/user-attachments/assets/98912a39-5bed-47af-81d6-3a4aef33ad1f" />
 
+## მოდელები
+### Linear Regression
+| Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
+|------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
+| Baseline | 0.8995 | 0.8640 | 24482.56 | 32293.27 | 15425.41 | 21043.45 | 0.1247 | 0.1677 | 0.0355 |
+| Baseline (log target) | 0.9080 | 0.9079 | 23424.36 | 26577.14 | 13768.38 | 17413.99 | 0.1100 | 0.1326 | 0.0001 |
+| Lasso Regression Baseline | 0.8653 | 0.9121 | 28340.52 | 25966.95 | 14835.74 | 16364.30 | 0.1209 | 0.1309 | -0.0468 |
+
+### Decision Tree
+| Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
+|------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
+| Baseline | 0.8402 | 0.7624 | 30877.19 | 42691.47 | 21913.60 | 28177.85 | 0.1722 | 0.2104 | 0.0778 |
+
+### Random Forest
+| Experiment | Train R² | Test R² | Train RMSE | Test RMSE | Train MAE | Test MAE | Train RMSLE | Test RMSLE | Overfitting Gap |
+|------|---------|--------|-----------|----------|----------|---------|------------|-----------|----------------|
 
