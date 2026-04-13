@@ -38,21 +38,43 @@ Feature-ები დავტოვე მხოლოდ
   რადგან მნიშვნელოვანი ფაქტორია სახლის ფასის განსაზღვრაში, იმის მაგივრად რომ ყველა სახის აბაზანა ცალ ცალკე განგვეხილა, მათი შეერთებით
   უფრო სრულყოფილ ინფორმაციას ვიღებთ.
 
+  <img width="735" height="486" alt="image" src="https://github.com/user-attachments/assets/7b413cfe-c88c-4521-8469-b5b9000fc1b7" />
+
+  **შესამჩნევია 4,5-ის შემდეგ დიდი ვარდნა ფასებში, თუმცა ეს გამოწვეულია 5 და 6 აბაზანიანი სახლების სიმცირეში (მხოლოდ 1 სახლი)**
+
 ###  Interaction Features
 - **OverallScore** = OverallQual × OverallCond
   სახლის ფასი ცალ ცალკე ხარისხითა და მდგომარეობით ვერ განისაზღვრება, დაბალი ხარისხის სახლლი კარგ მდგომარეობაში და პირიქით მაღალი ხარისხის
   სახლი ცუდ მდგომარეობაში ბევრად განსხვავდება იმ სახლებისგან რომლებსაც ორივე მახასიათებელი მაღალი აქვს, ასე უკეთ განვსაზღვრავთ ქონების ფასს.
+
+  <img width="738" height="485" alt="image" src="https://github.com/user-attachments/assets/27b20e80-b9b4-40fb-94b2-cfc19d1f7621" />
+
   
 - **QualArea** = OverallQual × GrLivArea
   დიდი სახლები ყოველთვის უფრო მეტად ფასობს, თუმცა ფასი ხარისხზეც არის დამოკიდებული, ეს იდეა ორივე პარამეტრს აერთიანებს.
   
+  <img width="728" height="470" alt="image" src="https://github.com/user-attachments/assets/5dfb53ae-2ce4-4b80-8250-e2f46b2c5223" />
+
+  
 ### Nonlinear Transformations
 - **LogGrLivArea** = log(GrLivArea + 1)
     სახლის ზომა მისი ზომის პროპორციულად არ იზომება, ამიტომ კარგია ლოგარითმული ტრანსფორმაციით ამ ორ პარამეტრს შორის დამოკიდებულების აღწერა
+
+    <img width="733" height="475" alt="image" src="https://github.com/user-attachments/assets/3acdc5af-0d40-4fe9-8362-8a89f07059ab" />
+
 - **HouseAge** = YrSold − YearBuilt
   სახლის ასაკი უკეთ განსაზღვრავს მის ფასს ვიდრე ის თუ როდის აშენდა და როდის გაიყიდა
+
+  <img width="854" height="483" alt="image" src="https://github.com/user-attachments/assets/421b5777-d9b4-43f2-bae2-ee8cedfb97d0" />
+
+  
 - **HouseAge²** = nonlinear age effect
   სახლის ასაკსა და ფასს შორის წრფივი დამოკიდებულება ნაკლებად სავარუდოა ამიტომ მის კვადრატს ვიყენებთ.
+  
+  <img width="855" height="478" alt="image" src="https://github.com/user-attachments/assets/7c623bb4-666b-43d9-9181-9cfc43b21fe5" />
+
+  **გრაფებიდან ჩანს რომ ასაკის ზრდასთან ერთად ფასი მცირდება, თუმცა რაღაც ეტაპზე გვაქვს ფასების სწრაფი ზრდა, სავარაუდოდ ძველი სახლების ისტორიული მნიშვნელობისა და ანტიკვარობის გამო**
+
 
 ## მოდელები
 ### Linear Regression
