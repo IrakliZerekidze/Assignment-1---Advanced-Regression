@@ -205,7 +205,43 @@ Feature Engineering-მა მცირე გაუმჯობესება 
 | Featuure Engineering | 0.9994 | 0.9243 | $1,368.27 | $14,534.06 | $1,853.17 | $24,088.89 | 0.0128 | 0.1295 | 0.0751 |
 | Feature Selection | 0.9994 | 0.9201 | $1,443.29 | $14,564.99 | $1,954.40 | $24,751.03 | 0.0135 | 0.1263 | 0.0792 |
 
+## MLflow Tracking
 
+ექსპერიმენტების მონიტორინგი განხორციელდა MLflow-ის საშუალებით DagsHub-ზე.
+
+🔗 [https://dagshub.com/](https://dagshub.com/izere23/Assignment-1---Advanced-Regression.mlflow/)
+
+---
+
+### დალოგილი მეტრიკები
+
+- train_r2  
+- test_r2  
+- train_rmse  
+- test_rmse  
+- train_mae  
+- test_mae  
+- train_rmsle  
+- test_rmsle  
+- overfitting_gap  
+
+---
+
+### დალოგილი პარამეტრები
+
+- num_features
+- imputation_strategy
+- engineered_features
+- feature_selection
+- scaling
+- model
+- target_transform
+
+---
+
+### შედეგი
+
+**Kaggle Score:** 0.20
 
 <img width="1482" height="103" alt="image" src="https://github.com/user-attachments/assets/78636974-e593-4c42-b818-8de54ee3b932" />
 
